@@ -1,0 +1,44 @@
+
+package check;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class HashcodeDemo {
+
+	public static void main(String[] args) {
+	Set<Person>	s=new HashSet<Person>();
+	s.add(new Person("santosh"));
+	s.add(new Person("aravindh"));
+	s.add(new Person("santosh"));
+	s.add(new Person("raj"));
+	System.out.println(s);
+	}
+
+}
+class Person{
+	String name;
+
+	public Person() {
+		
+	}
+
+	public Person(String name) {
+		super();
+		this.name = name;
+	}
+	public int hashCode(){
+		return this.name.charAt(0);
+	}
+	//it doesnot allows same one  -------------------
+	public boolean equals(Object ob){
+		Person p=(Person)ob;
+		return this.name.equals(p.name);
+	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return name;
+	}
+	
+}
